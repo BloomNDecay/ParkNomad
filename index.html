@@ -4,30 +4,69 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Park Nomad</title> 
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--<link rel="stylesheet" href="./assets/css/style.css">-->
   </head>
 
   <body>
-    <nav class="nav nav-bar bg-color">
+    <nav class="bg-blue-200">
       <div class="">
-        <div>
+
+        <div class="logo">
           <h1>ParkNomad <small>Group 8</small></h1>
         </div>
-        <ul>
-          <a href="#">
-            <li></li>
+
+           <ul>
+          <a href="#button">
+            <li>button</li>
           </a>
           <a href="#">
-            <li></li>
+            <li>button 2</li>
           </a>
           <a href="#">
-            <li></li>
+            <li>button 3</li>
           </a>
         </ul>
+       
       </div>
 
     </nav>
 
+  <main>
+    <section class="info" id="info">
+        <h1 class="info-css"> Information about our website</h1>
+        <p>lsm</p>
+    <form class="input-user cm-input">
+       <h1>Input goes here</h1>
+      <div>
+       <label for="searchLocation">Enter your Location</label>
+        <input type="text" id="searchLocation" placeholder="Location">
+      </div>
+      <div>
+        <label for="Distance">Radius</label>
+        <input type="text" name="Distance" id="Distance" placeholder="Distance">
+      </div>
+      <div>
+        <label for="schedule">Hours of operation</label>
+        <input type="text" name="open" id="schedule">
+      </div>
+
+      <button class="btn-cl btn-des btn-location"> Submit</button>
+    </form>
+  </section>
+
+    <footer class="style-ft bg-color flex-col" id="contact">
+      <h2>Social and links</h2>
+
+    </footer>
+
+   
+       
+        
+
+      </div>
+    </form>
+  </main>
 
 
 
@@ -36,6 +75,7 @@
 
 
 
+<script src="./assets/js/script.js"></script>
 
    </body>
 </html>
