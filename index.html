@@ -9,59 +9,118 @@
   </head>
 
   <body>
-    <nav class="bg-black text-white">
+    <!-- <nav class="bg-black text-white ">
       <div class="flex">
         <button class="flex justify-start ">Logo</button>
         <ul class="flex flex-row w-full justify-center">
 
           <li class="mx-2 px-2">One</li>
           <li class="mx-2 px-2">two</li>
-          <li>three</li>
+          <li class="mx-2 px-2">three</li>
         </ul>
         
       </div>
-      <!-- <div class="flex">
 
-        <div class="text-white">
-          <h1>ParkNomad <small>Group 8</small></h1>
+    </nav> -->
+    <!-- background black and creates a shadow  -->
+    <nav class="bg-slate-800 shadow h-16">
+      <!-- margin left right. Max width for a xl screen. padding left and right 2. sm padding and large screen padding -->
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <!-- Positioning height and flex -->
+        <div class="relative flex h-16 justify-between">
+          <!-- positioning inset flex center items  center items across the Y-axis* hide display when small-->
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button -->
+            <!-- creates a button. flex for inline centers items on the y-axis rounds the corners creates a padding text gray when hover change color when focused online when focus makes the inset for the button -->
+            <button type="button" class="bg-white inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-black hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!--
+                Icon when menu is closed.
+    
+                Heroicon name: outline/bars-3
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <!-- element is a block height 6 & width 6 -->
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!--
+                Icon when menu is open.
+    
+                Heroicon name: outline/x-mark
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <!-- sm:items-stretch sm:justify-start -->
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <!-- flex align items on the y-axis small screen stretch and small screen justify to the left -->
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <!-- flex positioning justify height to the 0 axis locate align items in the y-axis-->
+            <div class="flex flex-shrink-0 items-center">
+              <!-- display block height Weight auto  -->
+              <img class="block h-8 w-auto lg:hidden" src="" alt="ParkNomad">
+              <img class="hidden h-8 w-auto lg:block" src="" alt="ParkNomad">
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+              <a href="#" class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">Home</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-zinc-800 hover:text-gray-700">Info</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-zinc-800 hover:text-gray-700">Input</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-zinc-800 hover:text-gray-700">other</a>
+            </div>
+          </div>
         </div>
-
-           <ul class="flex">
-          <a href="#button">
-            <li>button</li>
-          </a>
-          <a href="#">
-            <li>button 2</li>
-          </a>
-          <a href="#">
-            <li>button 3</li>
-          </a>
-        </ul>
-       
-      </div> -->
-
+      </div> 
     </nav>
 
-  <main>
-    <section class="info" id="info">
-        <h1 class="info-css"> Information about our website</h1>
-        <p>lsm</p>
-    <form class="input-user cm-input">
-       <h1>Input goes here</h1>
-      <div>
-       <label for="searchLocation">Enter your Location</label>
-        <input type="text" id="searchLocation" placeholder="Location">
-      </div>
-      <div>
-        <label for="Distance">Radius</label>
-        <input type="text" name="Distance" id="Distance" placeholder="Distance">
-      </div>
-      <div>
-        <label for="schedule">Hours of operation</label>
-        <input type="text" name="open" id="schedule">
-      </div>
+  <main class="flex flex-wrap">
+    <section class="" id="info">    
+      <div class="bg-slate-800">
+        <h1 class="bg-slate-600 text-sky-600 text-center text-2xl underline sm:text-red-400 hover:decoration-double"> What is ParkNomad?</h1>  
+        <div class="grid grid-rows-3 grid-flow-col grid-cols-3 gap-2">
+          <img class=" h-60 w-140 row-span-3 sm:block hidden" src="./assets/img/parkNomad-01.jpeg" alt="Picture of a park">
 
-      <button class="btn-cl btn-des btn-location"> Submit</button>
+          <p class="justify-start text-start ml-2 mt-3 h-auto row-span-1 col-span-2 text-slate-100">ParkNomad was created for individuals who seek new park to around them anytime they travel. We implement a a location api that will show the closest park around there location. This project was created by:</p>
+          
+          <ul class="text-red-800 list-disc list-inside ml-4 ">
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="#Github account">Luis Martinez</a></li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="#">Jesus</a></li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="#"></a>Logan</li>
+          </ul>
+          <ul class="text-red-800 list-disc list-inside ml-4 col-end-4 row-start-2 ">
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="#Github account">Samiere</a></li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="#">Taylor</a></li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="#"></a>other</li>
+          </ul>
+        </div>  
+      </div>
+     
+    <form class="flex flex-wrap mt-1">
+      <div class="text-start sm:w-3/5 bg-slate-200  text-white item-center border-4 border-red-600 w-screen">
+        <h1 class="bg-black text-white text-center">Input goes here</h1>
+        <div class="m-2 text-black underline">
+          <label for="searchLocation">Enter your Location:</label>
+          <input class="" type="text" id="searchLocation" placeholder="Location">
+        </div>
+        <div class="m-2 text-black underline">
+          <label for="Distance">Radius:</label>
+          <input type="text" name="Distance" id="Distance" placeholder="Distance">
+        </div>
+        <div class="m-2 text-black underline">
+          <label for="schedule">Hours of operation:</label>
+          <input type="text" name="open" id="schedule">
+        </div>
+        <button class="bg-red-900"> Submit</button>  
+      </div>
+      
+      <img class="w-2/5" src="./assets/img/parkNomad-01.jpeg" alt="test">
+     
+       
     </form>
   </section>
 
