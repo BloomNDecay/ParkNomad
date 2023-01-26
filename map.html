@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+
+    <title>Park Nomad</title>
+
+  </head>
+  
+  <body class="bg-slate-400 text-white">
+    <nav class="bg-slate-800 shadow h-16">
+        <!-- margin left right. Max width for a xl screen. padding left and right 2. sm padding and large screen padding -->
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <!-- Positioning height and flex -->
+          <div class="relative flex h-16 justify-between">
+            <!-- positioning inset flex center items  center items across the Y-axis* hide display when small-->
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button -->
+              <!-- creates a button. flex for inline centers items on the y-axis rounds the corners creates a padding text gray when hover change color when focused online when focus makes the inset for the button -->
+              <button type="button" class="bg-white inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-black hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Heroicon name: outline/bars-3
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <!-- element is a block height 6 & width 6 -->
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Heroicon name: outline/x-mark
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <!-- sm:items-stretch sm:justify-start -->
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <!-- flex align items on the y-axis small screen stretch and small screen justify to the left -->
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <!-- flex positioning justify height to the 0 axis locate align items in the y-axis-->
+              <div class="flex flex-shrink-0 items-center">
+                <!-- display block height Weight auto  -->
+                <img class="block h-8 w-auto lg:hidden" src="" alt="ParkNomad">
+                <img class="hidden h-8 w-auto lg:block" src="" alt="ParkNomad">
+              </div>
+              <div class="hidden sm:ml-6 sm:flex sm:space-x-8 text-white">
+                <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+                <a href="#" class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-white">Home</a>
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">Info</a>
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">Input</a>
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">other</a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </nav>
+
+    <main class="flex flex-col w-full">
+        <h1 class="flex justify-center p-8 text-3xl">Orlando, Florida</h1> 
+
+        <section class="flex justify-center">
+          <div id="map" class="w-5/6 h-[700px] rounded-3xl border-2 border-slate-700"></div>
+        </section>
+        
+        <section class="flex flex-col text-center mt-8 h-full">
+          <div class="bg-slate-800 py-5 px-5">
+            <h2 class="text-lg underline"> About Your Area </h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Quae, consequatur itaque adipisci enim error</p>
+          </div>
+        </section>
+
+        <form class="flex justify-center my-5 rounded-lg">
+
+          <div class="text-start sm:w-3/5 bg-slate-200  text-white item-center border-2 border-cyan rounded-lg w-screen justify-center">
+            <h1 class="bg-slate-800 text-white text-center py-2 rounded-lg"> Want to change your radius?</h1>
+            <div class="m-2 text-black underline text-center">
+              <label for="Distance">Radius:</label>
+              <input type="text" name="Distance" id="Distance" placeholder="Distance">
+            </div>
+            <div class="m-2 text-black underline text-center">
+              <label for="schedule">Hours of operation:</label>
+              <input type="text" name="open" id="schedule" placeholder="Enter time">
+            </div>
+            <div class="flex justify-center">
+              <button class="flex bg-red-800 rounded-lg"> Submit</button> 
+            </div>
+             
+          </div>         
+        </form>
+    </main>
+
+    <footer class="text-center bg-slate-400 bg-slate-800 h-full pt-5">
+      <h2>Social & Links</h2>
+    </footer>
+
+	<script src="./assets/js/script.js"></script>
+  </body>
+</html>
