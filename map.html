@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Gym Nomad</title>
+
+  </head>
+  
+  <body class="bg-slate-300">
+    <nav class="">
+      <div class="flex p-5 bg-slate-700 text-white">
+        <button class="flex justify-start">Logo</button>
+        <ul class="flex flex-row w-full justify-center">
+          <li class="mx-2 px-2">One</li>
+          <li class="mx-2 px-2">two</li>
+          <li class="mx-2 px-2">three</li>
+        </ul>  
+      </div>
+    </nav>
+    <main class="flex flex-col w-full">
+        <h1 class="flex justify-center p-8 text-3xl">Map</h1> 
+
+        <section class="flex justify-center">
+          <div id="map" class="w-2/3 h-[700px] rounded-3xl border-2 border-slate-700"></div>
+        </section>
+        
+        <description class="flex flex-col text-center m-5">
+          <h2 class="text-lg underline"> About park </h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Quae, consequatur itaque adipisci enim error</p>
+        </description>
+
+    </main>
+    <footer class="text-center">
+      Placeholder: Consider consistency **maybe same contanct info from first page
+    </footer>
+	<script src="./assets/js/script.js"></script>
+  </body>
+</html>
