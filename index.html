@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Park Nomad</title> 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+
     <!--<link rel="stylesheet" href="./assets/css/style.css">-->
   </head>
 
@@ -93,18 +97,18 @@
   
           <ul class="text-red-800 list-disc list-inside ml-4 ">
             <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/LuisMtz-0">Luis Martinez</a></li>
-            <li class="text-sky-700 hover:text-black hover:underline "><a href="#">Jesus vazquez</a></li>
-            <li class="text-sky-700 hover:text-black hover:underline "><a href="#"></a>Logan</li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/JesusV545">Jesus Vazquez</a></li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/LoganWantstoCode"></a>Logan</li>
           </ul>
           <ul class="text-red-800 list-disc list-inside ml-4 col-end-4 row-start-2 ">
             <li class="text-sky-700 hover:text-black hover:underline "><a href="#Github account">Semere</a></li>
-            <li class="text-sky-700 hover:text-black hover:underline "><a href="#">Taylor Reyes</a></li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/BloomNDecay">Taylor Reyes</a></li>
             <li class="text-sky-700 hover:text-black hover:underline "><a href="#"></a>other</li>
           </ul>
         </div>
       </div>
   
-      <form class="flex flex-wrap mt-1">
+      <form class="flex flex-wrap mt-1" id="form1">
         <div class="text-start sm:w-3/5 text-white item-center w-screen bg-gradient-to-r from-slate-200 to-slate-900">
           <h1 class="text-black text-center text-[48px]">Input goes here</h1>
           <div class="m-2 text-sky-600 underline text-[28px] ">
@@ -124,7 +128,7 @@
           </div>
           <button
             class="justitfy-center h-[48px] w-40 rounded-full bg-gradient-to-r from-slate-200 to-slate-900 focus:bg-red-600"
-            id="btn"> Submit Info</button>
+            id="btn" type="submit"> Submit Info</button>
         </div>
         <img class="sm:w-2/5 w-screen" src="./assets/img/parkNomad-02.jpeg" alt="test">
       </form>
@@ -152,16 +156,24 @@
      
   
     </footer>
+
+    <!-- <weather class="flex flex-col justify-center text-center m-5" id="weather">
+      <section class="">
+        <h1 id="city-name" class="text-2xl">Current Weather: </h2>
+          <img id="weather-icon">
+        <div id="current-weather1">
+          <p id="temp">Temperature: </p>
+          <p id="humid">Humidity: </p>
+          <p id="wind">Wind: </p>
+        </div>
+      </section>
+    </weather>  -->
+    <weather id="current-weather1" class="flex flex-col absolute"></weather>
+
+
   </main>
 
-
-
-
-
-
-
-
-<script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 
    </body>
 </html>

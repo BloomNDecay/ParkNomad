@@ -12,6 +12,8 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
+     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
     
     <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
 
@@ -76,7 +78,18 @@
       </nav>
 
     <main class="flex flex-col w-full">
-        <h1 class="flex justify-center p-8 text-3xl">Orlando, Florida</h1> 
+        <h1 class="flex justify-center p-8 text-3xl">Orlando, Florida</h1>
+
+        <weather class="flex flex-col justify-center text-center m-5" id="weather">
+          <section class="">
+            <h1 class="text-2xl">Current Weather: </h2>
+            <div>
+              <p id="temp">Temperature: </p>
+              <p id="humid">Humidity: </p>
+              <p id="wind">Wind: </p>
+            </div>
+          </section>
+        </weather> 
 
         <section class="flex justify-center">
           <div id="map" class="w-5/6 h-[700px] rounded-3xl border-2 border-slate-700"></div>
@@ -110,8 +123,25 @@
         </form>
     </main>
 
-    <footer class="text-center bg-slate-400 bg-slate-800 h-full pt-5">
-      <h2>Social & Links</h2>
+    <footer class="bg-slate-800 w-screen mt-3" id="footer">
+      <h2 class="text-center text-2xl underline pt-5">Social and links</h2>
+      <div class="sm:grid grid-cols-3 grid-flow-col" >
+        <div class="">
+          <h1 class="text-sky-900 text-xl text-center font-bold"><span class="text-sky-600">About</span> Us</h1>
+          <p class="p-2 text-center">Here at Nomad Enterprise we strive to create the best websites for individuals who seek exportation and need a way to find whatever they are looking for whenever, wherever, and anyone can use it. </p>
+        </div>
+        <div class="">
+          <h1 class="text-sky-600 text-xl text-center font-bold">Socials</h1>
+          <ul class="list-none">
+            <li class="ml-10 hover:underline"><a href="#" class="text-white">Instagram</a></li>
+            <li class="ml-10 hover:underline"><a href="#" class="text-white">Facebook</a></li>
+            <li class="ml-10 hover:underline"><a href="#" class="text-white">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h1 class="text-sky-900 text-xl text-center font-bold">License</h1>
+        </div>
+      </div>
     </footer>
 
 	<script src="./assets/js/script.js"></script>
