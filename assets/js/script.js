@@ -1,56 +1,92 @@
-// First allow map to display markers/Parks
-// Allow marker to display parks with workout stations within a radius of 5000 (show in Orlando)
-// Click the park for more 
-// Initialize and add map
-let map;
-let service;
-let place;
+// document.getElementById("button")
 
-function initMap() {
-  // The location of Orlando
-  const orlando = new google.maps.LatLng(28.5383, -81.3792);
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: orlando,
-     zoom: 12
-    });
-    //search parameters
-    let request = {
-      location: orlando,
-      keyword: 'Park with workout equipment',
-      radius : '5000',
-    };
-    //looks for places using place api based on query
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request,
-  (results, status) => {
-console.log(results, status);
-  if (status == google.maps.places.PlacesServiceStatus.OK) { 
-    console.log(results, status);
-    for (var i  = 0; i < results.length; i++) {
-      const marker = new google.maps.Marker({
-        position: results[i].geometry.location,
-        map: map,
-      });
-      console.log(marker);
-    }
-    }
-})
+// document.addEventListener("click",function(e) {
+  
+//   console.log("e");
+
+// })
+
+
+//LETS THE DOCUMENT LOAD BEFORE RUNNING FUNCTION
+$('document').ready(function() {
+  $("#btn").click(function(e) {
+    e.preventDefault();
+      //NEED TO GET THE INFO SUBMISSION 
+      let location = $("#searchLocation").val();
+      let distance = $("#Distance").val();
+      let schedule = $("#schedule").val();
+      //WHEN ITS EMPTY
+      $("#searchLocation").val(" ");
+      $("#Distance").val(" ");
+      $("#schedule").val(" ");
+
+      // console.log(location, distance, schedule);
+      //GONNA NEED A FUNCTION TO TAKE INFO AND REDIRECT INTO MAP.HTML 
+      //displayMap(location, distance, schedule);
+      getWeather(location);
+
+  })
+
+  //FUNCTION TO DISPLAY MAP
+  // function displayMap(location, distance, schedule) {
+  //   let mapPage = "map.html";
+  //   document.location.replace(mapPage);
+
+  //   getWeather(location);
+
+  // }
+
+
+
+function getWeather(location) {
+
+  // let mapPage = "map.html";
+  // document.location.replace(mapPage);
+  
+  $.ajax({
+    type: "GET",
+    url: "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=6b490bf0f6476248bee4dafc71b2b9a1",
+    dataType: "json",
+  }).then(function(data){
+    console.log(data);
+  
+
+  //NEED TO GET COORDS FOR LOCATION
+  let lon = data.coord.lon;
+  let lat = data.coord.lat;
+
+  //GAVE ME TAMP IN KELVIN NEED TO CONVERT TO F
+  let kelvinToF= (data.main.temp - 273.15) * 9/5 + 32;
+  let fTemp = kelvinToF.toFixed(2);
+
+  //GETTING TODAYS DATE
+  let date = $("<h1>").addClass("text-xl bold").text("Current Weather Today: " + new Date().toLocaleDateString());
+  let icon = $("<img>").addClass("w-full").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+  let weatherDiv = $("<div>").addClass("flex flex-col text-center");
+  let temp = $("<p>").addClass("text-lg").text("Temperature: " + fTemp);
+  let humidity = $("<p>").addClass("text-lg").text("Humidity: " + data.main.humidity);
+  let wind = $("<p>").addClass("text-lg").text("Wind Speed: " + data.wind.speed);
+  
+  //console.log(lon, lat, date, humidity, wind, fTemp);
+  //NEED ANOTHER CALL TO GET WEATHER INFO WITH NAME WITH COORDS I GOT EARLIER
+  $.ajax({
+    type: "GET",
+    url : "https://api.openweathermap.org/data/2.5/uvi?appid=6b490bf0f6476248bee4dafc71b2b9a1&lat=" + lat + "&lon=" + lon,
+    dataType : "json",
+  }).then(function(response){
+    console.log(response);
+  });
+  //NEED TO APPEND THE NEW ELEMENTS
+  date.append(icon);
+  weatherDiv.append(date, temp, humidity, wind);
+  $("#current-weather1").append(weatherDiv);
+
+  });
 }
 
 
- 
-  /*const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: orlando,
-  });      */
 
-//window.initMap = initMap;
 
-document.getElementById("button")
 
-document.addEventListener("click",function(e) {
-  
-  console.log("e");
 
-})
-
+});
