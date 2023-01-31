@@ -36,8 +36,11 @@ function initMap() {
         console.log(pinPoint);
         infowindow.setContent(
          `
-         <div>
-         <p>${pinPoint.name}</p>
+         <div id="info" class= "text-black">
+         <p>${pinPoint.name} <br>
+         ${pinPoint.rating} <br>
+        ${pinPoint.vicinity}
+        ${pinPoint.icon}</p>
          </div>
          `
        )
