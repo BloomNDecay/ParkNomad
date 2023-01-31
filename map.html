@@ -70,7 +70,7 @@
                 <a href="#" class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-white">Home</a>
                 <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">Info</a>
                 <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">Input</a>
-                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">other</a>
+                <a href="./index.html" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-zinc-800 hover:text-gray-700">&larr; Go back.</a>
               </div>
             </div>
           </div>
@@ -78,8 +78,8 @@
       </nav>
 
     <main class="flex flex-col w-full">
-        <h1 class="flex justify-center p-8 text-3xl">Orlando, Florida</h1>
-        <weather id="current-weather1" class="flex flex-col"></weather>
+        <!-- <h1 class="flex justify-center p-8 text-3xl">Orlando, Florida</h1> -->
+        <weather id="current-weather1" class="flex flex-col bg-slate-800 mt-8"></weather>
 
         <!-- <weather class="flex flex-col justify-center text-center m-5" id="weather">
           <section class="">
@@ -93,8 +93,7 @@
         </weather>  -->
 
         <section class="flex justify-center">
-          <div id="map" class="w-[500px] h-[250px]">
-          </div>
+          <div id="map" class="w-[600px] h-[400px] mt-8 rounded-lg"></div>
         </section>
         
         <section class="flex flex-col text-center mt-8 h-full">
@@ -111,8 +110,7 @@
             <h1 class="bg-slate-800 text-white text-center py-2 rounded-lg"> Want to change your search?</h1>
             <div class="m-2 text-black underline text-center">
               <label class="" for="searchLocation">Enter your Location:</label>
-              <input type="text" id="searchLocation"
-                placeholder="Location">
+              <input type="text" id="searchLocation2" placeholder="Location">
             </div>
             <div class="m-2 text-black underline text-center">
               <label for="Distance">Radius:</label>
@@ -123,7 +121,7 @@
               <input type="text" name="open" id="schedule" placeholder="Enter time">
             </div>
             <div class="flex justify-center">
-              <button class="flex bg-red-800 rounded-lg"> Submit</button> 
+              <button class="flex bg-red-800 rounded-lg" id="btn2"> Submit</button> 
             </div>
              
           </div>         

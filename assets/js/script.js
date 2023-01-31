@@ -1,48 +1,49 @@
-// document.getElementById("button")
-
-// document.addEventListener("click",function(e) {
-  
-//   console.log("e");
-
-// })
-
-
 //LETS THE DOCUMENT LOAD BEFORE RUNNING FUNCTION
 $('document').ready(function() {
+
   $("#btn").click(function(e) {
     e.preventDefault();
       //NEED TO GET THE INFO SUBMISSION 
       let location = $("#searchLocation").val();
-      let distance = $("#Distance").val();
-      let schedule = $("#schedule").val();
+      let distance = $("#Distance").val();//for future development
+      let schedule = $("#schedule").val();//for future development
       //WHEN ITS EMPTY
       $("#searchLocation").val(" ");
-      $("#Distance").val(" ");
-      $("#schedule").val(" ");
+      $("#Distance").val(" ");//for future development
+      $("#schedule").val(" ");//for future development
 
-      // console.log(location, distance, schedule);
       //GONNA NEED A FUNCTION TO TAKE INFO AND REDIRECT INTO MAP.HTML 
-      //displayMap(location, distance, schedule);
-      getWeather(location);
+      localStorage.setItem("city", location);
+      let storedLocation = localStorage.getItem("city", location);
+      console.log(storedLocation);
+
+      let qString = './map.html?q=' + location;
+      document.location.assign(qString);
 
   })
 
-  //FUNCTION TO DISPLAY MAP
-  // function displayMap(location, distance, schedule) {
-  //   let mapPage = "map.html";
-  //   document.location.replace(mapPage);
+});
 
-  //   getWeather(location);
+$('document').ready(function() {
 
-  // }
+  let storedLocation = localStorage.getItem("city", location);
+  setTimeout(getWeather(storedLocation), 1000);
 
+ $('#btn2').click(function(e){
+    e.preventDefault();
+    localStorage.clear();
+    $("#current-weather1").html("");
 
+    let location = $("#searchLocation2").val();
+    localStorage.setItem("city", location);
+    let storedLocation = localStorage.getItem("city", location);
+
+    getWeather(storedLocation);
+
+ });
 
 function getWeather(location) {
 
-  // let mapPage = "map.html";
-  // document.location.replace(mapPage);
-  
   $.ajax({
     type: "GET",
     url: "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=6b490bf0f6476248bee4dafc71b2b9a1",
@@ -50,7 +51,6 @@ function getWeather(location) {
   }).then(function(data){
     console.log(data);
   
-
   //NEED TO GET COORDS FOR LOCATION
   let lon = data.coord.lon;
   let lat = data.coord.lat;
@@ -60,13 +60,14 @@ function getWeather(location) {
   let fTemp = kelvinToF.toFixed(2);
 
   //GETTING TODAYS DATE
-  let date = $("<h1>").addClass("text-xl bold").text("Current Weather Today: " + new Date().toLocaleDateString());
-  let icon = $("<img>").addClass("w-full").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
-  let weatherDiv = $("<div>").addClass("flex flex-col text-center");
-  let temp = $("<p>").addClass("text-lg").text("Temperature: " + fTemp);
-  let humidity = $("<p>").addClass("text-lg").text("Humidity: " + data.main.humidity);
-  let wind = $("<p>").addClass("text-lg").text("Wind Speed: " + data.wind.speed);
-  
+  let date = $("<h2>").addClass("text-xl bold").text("Current Weather Today: " + new Date().toLocaleDateString());
+  let imgDiv =$("<div>").addClass("flex justify-center");
+  let icon = $("<img>").addClass("w-[100px] h-[100px]").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+  let weatherDiv = $("<div>").addClass("flex flex-col text-center justify-center my-5");
+  let temp = $("<p>").addClass("text-lg").text("Temperature: " + fTemp + " F");
+  let humidity = $("<p>").addClass("text-lg").text("Humidity: " + data.main.humidity + "%");
+  let wind = $("<p>").addClass("text-lg").text("Wind Speed: " + data.wind.speed + " mph");
+  let cityName = $("<h1>").addClass("text-2xl bold").text(data.name);
   //console.log(lon, lat, date, humidity, wind, fTemp);
   //NEED ANOTHER CALL TO GET WEATHER INFO WITH NAME WITH COORDS I GOT EARLIER
   $.ajax({
@@ -77,16 +78,15 @@ function getWeather(location) {
     console.log(response);
   });
   //NEED TO APPEND THE NEW ELEMENTS
-  date.append(icon);
-  weatherDiv.append(date, temp, humidity, wind);
+  imgDiv.append(icon);
+  weatherDiv.append(cityName, date, imgDiv, temp, humidity, wind);
   $("#current-weather1").append(weatherDiv);
 
   });
 }
 
-
-
-
-
-
 });
+
+
+
+
