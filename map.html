@@ -78,19 +78,8 @@
       </nav>
 
     <main class="flex flex-col w-full">
-        <!-- <h1 class="flex justify-center p-8 text-3xl">Orlando, Florida</h1> -->
-        <weather id="current-weather1" class="flex flex-col bg-slate-800 mt-8"></weather>
-
-        <!-- <weather class="flex flex-col justify-center text-center m-5" id="weather">
-          <section class="">
-            <h1 class="text-2xl">Current Weather: </h2>
-            <div>
-              <p id="temp">Temperature: </p>
-              <p id="humid">Humidity: </p>
-              <p id="wind">Wind: </p>
-            </div>
-          </section>
-        </weather>  -->
+        <h1 class="py-2 mt-8 bg-slate-800 text-sky-600 text-center text-3xl underline sm:text-red-400">Weather</h1>
+        <weather id="current-weather1" class="flex flex-col bg-slate-800"></weather>
 
         <section class="flex justify-center">
           <div id="map" class="w-[600px] h-[400px] mt-8 rounded-lg"></div>
@@ -98,7 +87,7 @@
         
         <section class="flex flex-col text-center mt-8 h-full">
           <div class="bg-slate-800 py-5 px-5">
-            <h2 class="text-lg underline"> About Your Area </h2>
+            <h2 class="py-5 bg-slate-800 text-sky-600 text-center text-3xl underline sm:text-red-400"> About Your Area </h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
             Quae, consequatur itaque adipisci enim error</p>
           </div>
@@ -128,25 +117,26 @@
         </form>
     </main>
 
-    <footer class="bg-slate-800 w-screen mt-3" id="footer">
-      <h2 class="text-center text-2xl underline pt-5">Social and links</h2>
+    <footer class="bg-slate-800 w-screen mt-1 pb-8" id="footer">
+      <h2 class="py-5 bg-slate-800 text-sky-600 text-center text-3xl underline sm:text-red-400">Social and links</h2>
       <div class="sm:grid grid-cols-3 grid-flow-col" >
         <div class="">
-          <h1 class="text-sky-900 text-xl text-center font-bold"><span class="text-sky-600">About</span> Us</h1>
-          <p class="p-2 text-center">Here at Nomad Enterprise we strive to create the best websites for individuals who seek exportation and need a way to find whatever they are looking for whenever, wherever, and anyone can use it. </p>
+          <h1 class="text-sky-600 text-xl text-center font-bold pb-5">About Us</h1>
+          <p class="p-2 text-white text-center">Here at Nomad Enterprise we strive to create the best websites for individuals who seek exportation and need a way to find whatever they are looking for whenever, wherever, and anyone can use it. </p>
         </div>
         <div class="">
-          <h1 class="text-sky-600 text-xl text-center font-bold">Socials</h1>
-          <ul class="list-none">
-            <li class="ml-10 hover:underline"><a href="#" class="text-white">Instagram</a></li>
-            <li class="ml-10 hover:underline"><a href="#" class="text-white">Facebook</a></li>
-            <li class="ml-10 hover:underline"><a href="#" class="text-white">Twitter</a></li>
+          <h1 class="text-sky-600 text-xl text-center font-bold pb-5">Socials</h1>
+          <ul class="flex flex-col text-center">
+            <p class="pb-3 hover:underline"><a href="#" class="text-white">Instagram</a></p>
+            <p class="pb-3 hover:underline"><a href="#" class="text-white">Facebook</a></p>
+            <p class="pb-3 hover:underline"><a href="#" class="text-white">Twitter</a></p>
           </ul>
         </div>
         <div>
-          <h1 class="text-sky-900 text-xl text-center font-bold">License</h1>
+          <h1 class="text-sky-600 text-xl text-center font-bold pb-5">License</h1>
         </div>
       </div>
+     
     </footer>
 
   <script src="./assets/js/map.js"></script>
