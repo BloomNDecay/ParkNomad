@@ -13,21 +13,8 @@
   </head>
 
   <body>
-    <!-- <nav class="bg-black text-white ">
-      <div class="flex">
-        <button class="flex justify-start ">Logo</button>
-        <ul class="flex flex-row w-full justify-center">
-
-          <li class="mx-2 px-2">One</li>
-          <li class="mx-2 px-2">two</li>
-          <li class="mx-2 px-2">three</li>
-        </ul>
-        
-      </div>
-
-    </nav> -->
     <!-- background black and creates a shadow  -->
-    <nav class="bg-slate-800 shadow h-16">
+    <nav class="bg-slate-400 shadow h-16">
       <!-- margin left right. Max width for a xl screen. padding left and right 2. sm padding and large screen padding -->
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <!-- Positioning height and flex -->
@@ -72,34 +59,35 @@
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
               <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-              <a href="#" class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">Home</a>
-              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-zinc-800 hover:text-gray-700">Info</a>
-              <a href="https://github.com/BloomNDecay/ParkNomad" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-zinc-800 hover:text-gray-700">Repository</a>
-              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-zinc-800 hover:text-gray-700">other</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-m font-medium text-white">Home</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-m font-medium text-slate-800 hover:border-zinc-800 hover:text-white">Info</a>
+              <a href="https://github.com/BloomNDecay/ParkNomad" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-m font-medium text-slate-800 hover:border-zinc-800 hover:text-white">Repository</a>
+              <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-slate-800 hover:border-zinc-800 hover:text-white">other</a>
             </div>
           </div>
         </div>
       </div> 
     </nav>
 
-  <main class="flex flex-wrap">
+  <main class="flex flex-wrap bg-slate-400">
     <section class="" id="info">
       <div class="bg-slate-800">
-        <h1 class="bg-slate-600 text-sky-600 text-center text-2xl underline sm:text-red-400 hover:decoration-double"> What
+        <h1 class="py-6 bg-slate-800 text-sky-600 text-center text-3xl underline sm:text-red-400"> What
           is ParkNomad?</h1>
-        <div class="grid grid-rows-3 grid-flow-col grid-cols-3 gap-2">
-          <img class=" h-60 w-140 row-span-3 sm:block hidden" src="./assets/img/parkNomad-01.jpeg"
+        <div class="grid grid-rows-2 grid-flow-col grid-cols-3 gap-2">
+          <img class="rounded-lg h-60 w-140 row-span-3 sm:block hidden" src="./assets/img/parkNomad-01.jpeg"
             alt="Picture of a park">
   
-          <p class="justify-start text-start ml-2 mt-3 h-auto row-span-1 col-span-2 text-slate-100">"ParkNomad is a cutting-edge web application 
+          <p class="justify-start text-start ml-2 mt-3 h-auto row-span-1 col-span-2 text-slate-100">ParkNomad is a cutting-edge web application 
             that combines the power of location and weather APIs to bring you the ultimate park experience. With ParkNomad, you can easily find the 
             best parks with outdoor gym equipment in your area, and get a clear idea of what to expect weather-wise as you plan your outdoor workout. 
-            Whether you're a fitness enthusiast or simply looking for a new place to enjoy the great outdoors, ParkNomad has you covered. So why wait? Start exploring today!":</p>
-  
+            Whether you're a fitness enthusiast or simply looking for a new place to enjoy the great outdoors, ParkNomad has you covered. So why wait? Start exploring today!
+            This application was made possible with the collaboration between: </p>
+
           <ul class="text-red-800 list-disc list-inside ml-4 ">
             <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/LuisMtz-0">Luis Martinez</a></li>
             <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/JesusV545">Jesus Vazquez</a></li>
-            <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/LoganWantstoCode"></a>Logan</li>
+            <li class="text-sky-700 hover:text-black hover:underline "><a href="https://github.com/LoganWantstoCode">Logan</a></li>
           </ul>
           <ul class="text-red-800 list-disc list-inside ml-4 col-end-4 row-start-2 ">
             <li class="text-sky-700 hover:text-black hover:underline "><a href="#Github account">Semere</a></li>
@@ -109,68 +97,58 @@
         </div>
       </div>
   
-      <form class="flex flex-wrap mt-1" id="form1">
-        <div class="text-start sm:w-3/5 text-white item-center w-screen bg-gradient-to-r from-slate-200 to-slate-900">
-          <h1 class="text-black text-center text-[48px]">Input goes here</h1>
-          <div class="m-2 text-sky-600 underline text-[28px] ">
-            <label class="" for="searchLocation">Enter your Location:</label>
-            <input class="rounded-lg bg-black focus:bg-white ml-4 focus:text-black" type="text" id="searchLocation"
-              placeholder="Location">
+      <form class="flex flex-wrap my-10 bg-slate-800" id="form1">
+        <div class="text-start py-6 flex flex-col sm:w-3/5 text-white item-center w-screen bg-slate-800">
+          <h1 class="py-5 bg-slate-800 text-sky-600 text-center text-3xl underline sm:text-red-400">Input goes here</h1>
+          <section class="flex flex-col text-center">
+            <div class="m-2 text-sky-600 underline text-[28px] ">
+              <label class="" for="searchLocation">Location:</label>
+              <input class="rounded-lg bg-black focus:bg-white ml-4 focus:text-black" type="text" id="searchLocation"
+                placeholder="Enter city name">
+            </div>
+            <div class="m-2 text-sky-600 underline text-[28px]">
+              <label for="Distance">Radius:</label>
+              <input class="rounded-lg bg-black focus:bg-white ml-4 focus:text-black" type="text" name="Distance"
+                id="Distance" placeholder="Distance">
+            </div>
+            <div class="m-2 text-sky-600 underline text-[28px]">
+              <label for="schedule">Schedule:</label>
+              <input class="rounded-lg bg-black focus:bg-white ml-4 focus:text-black" type="text" name="open" id="schedule"
+                placeholder="Hours of operation">
+            </div>
+          </section>
+          
+          <div class="flex justify-center text-center py-3">
+            <button class="h-[48px] w-40 rounded-full bg-gradient-to-r from-slate-400 to-slate-800 focus:bg-red-600"
+            id="btn" type="submit"> Submit </button>
           </div>
-          <div class="m-2 text-sky-600 underline text-[28px]">
-            <label for="Distance">Radius:</label>
-            <input class="rounded-lg bg-black focus:bg-white ml-4 focus:text-black" type="text" name="Distance"
-              id="Distance" placeholder="Distance">
-          </div>
-          <div class="m-2 text-sky-600 underline text-[28px]">
-            <label for="schedule">Hours of operation:</label>
-            <input class="rounded-lg bg-black focus:bg-white ml-4 focus:text-black" type="text" name="open" id="schedule"
-              placeholder="Status">
-          </div>
-          <button
-            class="justitfy-center h-[48px] w-40 rounded-full bg-gradient-to-r from-slate-200 to-slate-900 focus:bg-red-600"
-            id="btn" type="submit"> Submit Info</button>
+          
         </div>
         <img class="sm:w-2/5 w-screen" src="./assets/img/parkNomad-02.jpeg" alt="test">
       </form>
     </section>
   
-    <footer class="bg-slate-600 w-screen mt-1" id="footer">
-      <h2 class="text-center text-rose-400 text-2xl">Social and links</h2>
+    <footer class="bg-slate-800 w-screen mt-1 pb-8" id="footer">
+      <h2 class="py-5 bg-slate-800 text-sky-600 text-center text-3xl underline sm:text-red-400">Social and links</h2>
       <div class="sm:grid grid-cols-3 grid-flow-col" >
         <div class="">
-          <h1 class="text-sky-900 text-xl text-center font-bold"><span class="text-sky-600">About</span> Us</h1>
-          <p class="p-2">Here at Nomad Enterprise we strive to create the best websites for individuals who seek exportation and need a way to find whatever they are looking for whenever, wherever, and anyone can use it. </p>
+          <h1 class="text-sky-600 text-xl text-center font-bold pb-5">About Us</h1>
+          <p class="p-2 text-white text-center">Here at Nomad Enterprise we strive to create the best websites for individuals who seek exportation and need a way to find whatever they are looking for whenever, wherever, and anyone can use it. </p>
         </div>
         <div class="">
-          <h1 class="text-sky-600 text-xl text-center font-bold">Socials</h1>
-          <ul class="list-disc">
-            <li class="ml-10 hover:underline"><a href="#" class="text-white">Instagram</a></li>
-            <li class="ml-10 hover:underline"><a href="#" class="text-white">Facebook</a></li>
-            <li class="ml-10 hover:underline"><a href="#" class="text-white">Twitter</a></li>
+          <h1 class="text-sky-600 text-xl text-center font-bold pb-5">Socials</h1>
+          <ul class="flex flex-col text-center">
+            <p class="pb-3 hover:underline"><a href="#" class="text-white">Instagram</a></p>
+            <p class="pb-3 hover:underline"><a href="#" class="text-white">Facebook</a></p>
+            <p class="pb-3 hover:underline"><a href="#" class="text-white">Twitter</a></p>
           </ul>
         </div>
         <div>
-          <h1 class="text-sky-900 text-xl text-center font-bold">License</h1>
+          <h1 class="text-sky-600 text-xl text-center font-bold pb-5">License</h1>
         </div>
       </div>
      
-  
     </footer>
-
-    <!-- <weather class="flex flex-col justify-center text-center m-5" id="weather">
-      <section class="">
-        <h1 id="city-name" class="text-2xl">Current Weather: </h2>
-          <img id="weather-icon">
-        <div id="current-weather1">
-          <p id="temp">Temperature: </p>
-          <p id="humid">Humidity: </p>
-          <p id="wind">Wind: </p>
-        </div>
-      </section>
-    </weather>  -->
-    <!-- <weather id="current-weather1" class="flex flex-col"></weather> -->
-
 
   </main>
 
